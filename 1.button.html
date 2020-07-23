@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>button first</title>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <script>
+      function date() {
+        let yourDate = new Date()
+        let paragraph = document.querySelector("p");
+        paragraph.innerText = yourDate;
+      }
+    </script>
+    <button onclick="date()">Know Your Current Time!</button>
+    <br>
+    <p class="par"></p>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html> 
+<html lang="en">
+ 	<head>  
+ 		<meta charset="utf-8"> 
+ 		<title>6.changecolor</title> 
+ 		<meta name="description" content="The HTML5 ">  
+ 		<meta name="author" content="">  
+ 
+ 		<link rel="stylesheet" href="styles.css">
+ 		    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+ 	</head>
+ 	<body>  
+ 		<p class="paragraph">Veniam laboris in adipisicing laboris mollit non consectetur occaecat velit sit eiusmod ea reprehenderit quis labore laboris officia aliqua cupidatat reprehenderit reprehenderit dolore officia laborum ullamco qui culpa incididunt ex dolore sint velit aute consequat velit excepteur pariatur dolore officia nulla esse amet laborum sit laborum culpa in ullamco dolore veniam eiusmod est commodo ut velit aliqua esse est id cillum amet sunt eu eiusmod nisi commodo est officia incididunt commodo mollit id voluptate magna amet laborum labore aliquip elit ad nulla non velit adipisicing ad incididunt ut mollit sunt in dolor ex tempor esse in sint dolor culpa adipisicing in enim sit cupidatat in nostrud ea laborum cupidatat commodo nostrud proident ut eiusmod deserunt minim dolor incididunt officia magna ad labore consequat pariatur duis officia esse velit ad ut aute consequat qui voluptate pariatur nostrud consequat amet deserunt irure ex officia sed occaecat ullamco voluptate ad occaecat ut sit dolore nisi ut dolore quis irure ad reprehenderit nulla dolore ut aute esse in sed aliqua in cupidatat minim adipisicing laborum aliquip ea aute ut reprehenderit duis mollit dolore duis tempor occaecat ullamco duis minim ullamco in in reprehenderit velit exercitation aliqua magna cupidatat ut non sit ut deserunt occaecat in veniam in minim eu eu dolore ad id.</p>
+ 		<p class="paragraph">Veniam laboris in adipisicing laboris mollit non consectetur occaecat velit sit eiusmod ea reprehenderit quis labore laboris officia aliqua cupidatat reprehenderit reprehenderit dolore officia laborum ullamco qui culpa incididunt ex dolore sint velit aute consee velit ad ut aute consequat qui voluptate pariatur nostrud consequat amet deserunt irure ex officia sed occaecat ullamco voluptate ad occaecat ut sit dolore nisi ut dolore quis irure ad reprehenderit nulla dolore ut aute esse in sed aliqua in cupidatat minim adipisicing laborum aliquip ea aute ut reprehenderit duis mollit dolore duis tempor occaecat ullamco duis minim ullamco in in reprehenderit velit exercitation aliqua magna cupidatat ut non sit ut deserunt occaecat in veniam in minim eu eu dolore ad id.</p>
+ 		<p class="paragraph">Veniam laboris in adipisicing laboris mollit non consectetur occaecat velit sit eiusmod ea reprehenderit quis labore laboris officia aliqua cupidatat reprehenderit reprehenderit dolore officia laborum ullamco qui culpa incididunt ex dolore sint velit aute consequat velit excepteur pariatur dolore officia nulla esse amet laborum sit laborum culpa in ullamco dolore veniam eiusmod est commodo ut velit aliqua esse est id cillum amet sunt eu eiusmod nisi commodo est officia incididunt commodo mollit id voluptate magna amet laborum labore aliquip elit ad nulla non velit adipisicing ad incididunt ut mollit sunt in dolor ex tempor esse in sint dolor culpa adipisicing in enim sit cupidatat in nostrud ea laborum cupidatat commodo nostrud proident ut eiusmod deserunt minim dolor incididunt officia magna ad labore consequat pariatur duis officia esse velit ad ut aute consequat qui voluptate pariatur nostrud consequat amet deserunt irure ex officia sed occaecat ullamco voluptate ad occaecat ut sit dolore nisi ut dolore quis irure ad reprehenderit nulla dolore ut aute esse in sed aliqua in cupidatat minim adipisicing laborum aliquip ea aute ut reprehenderit duis mollit dolore duis tempor occaecat ullamco duis minim ullamco in in reprehenderit velit exercitation aliqua magna cupidatat ut non sit ut deserunt occaecat in veniam in minim eu eu dolore ad id.</p>
+	
+		<label for="">Change color of text: #<input type="text" id="color"></label>
+		<br><br>
+		<label for="">Change background of text: #<input type="text" id="bgcolor"></label>
+		<br>	
+		<button onclick="checkapply()">Apply</button>
+ 		<script>
+ 			const dont = ["g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+ 			function checkapply() {
+ 			   let valColor = document.querySelector("#color").value.toString().toLowerCase()
+ 			   let valBgColor = document.querySelector("#bgcolor").value.toString().toLowerCase()
+
+ 				if(valColor.length === 6){
+ 					for (let i = 0; i < dont.length; i++){
+ 						if(valColor.includes(dont[i])){
+ 							throw new Error("Sorry It should contain only a,b,c,d,e,f,1-9")
+ 						}
+ 					}
+ 				document.querySelectorAll('p').forEach(e => e.style.color = "#" + valColor);
+ 					
+ 				}
+ 				if(valBgColor.length === 6){
+ 					for (let i = 0; i < dont.length; i++){
+ 						if(valBgColor.includes(dont[i])){
+ 							throw new Error("Sorry It should contain only a,b,c,d,e,f,1-9")
+ 						}
+ 					}
+ 				document.querySelectorAll('p').forEach(e => e.style.backgroundColor = "#" + valBgColor);
+ 					return "Done!";
+ 				}
+ 				throw new Error("Sorry It should be 6 chars long")
+ 			}
+ 		</script>
+ 	</body>
+</html>

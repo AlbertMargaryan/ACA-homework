@@ -1,0 +1,78 @@
+<!DOCTYPE html> 
+<html lang="en">
+ 	<head>  
+ 		<meta charset="utf-8"> 
+ 		<title>7.table</title> 
+ 		<meta name="description" content="The HTML5 ">  
+ 		<meta name="author" content="">  
+ 
+ 		<link rel="stylesheet" href="styles.css">
+ 	</head>
+ 	<body>  
+ 		<!--I haven't understood what I sould do in this task so I made this...-->
+		<table style="width: 30%; border: 1px solid;">
+		  <tr>
+		    <th>Name</th>
+		    <th>Age</th>
+		    <th>Average score</th>
+		  </tr>
+		  <tr>
+		    <td>Jill Smith</td>
+		    <td>12</td>
+		    <td>7</td>
+		  </tr>
+		  <tr>
+		    <td>Eve Jackson</td>
+		    <td>13</td>
+		    <td>5</td>
+		  </tr>
+		  <tr>
+		    <td><input id="first" type="text" style="height: auto;width: auto;border:1px solid #ccc;"></td>
+		    <td><input id="middle" type="text" style="height: auto;width: auto;border:1px solid #ccc;"></td>
+		    <td><input id="last" placeholder="Press Enter here" type="text" style="height: auto;width: auto;border:1px solid #ccc;"> </td>
+		  </tr>
+		</table>
+ 		<script >
+ 			let inputs = document.querySelector("#last");
+
+ 			inputs.addEventListener("keyup", function(event) {
+			  // Number 13 is the "Enter" key on the keyboard
+			  if (event.keyCode === 13) {
+			    let first = document.querySelector("#first");
+			    let middle = document.querySelector("#middle");
+			    let last = document.querySelector("#last");
+			    
+			    if(first.value != ""){
+			    	if(middle.value != ""){
+			    		if(typeof +last.value == "number"){
+			    			
+			    			let table = document.querySelector("table")
+			    			let newTr =  document.createElement("tr");
+
+			    			let newTd1 = document.createElement("td");
+			    			let newTd2 = document.createElement("td");
+			    			let newTd3 = document.createElement("td");
+
+			    			let text1 = document.createTextNode(first.value);
+			    			let text2 = document.createTextNode(middle.value);
+			    			let text3 = document.createTextNode(last.value);
+
+
+			    			newTd1.InnerText = first.value;
+			    			table.appendChild(newTr)
+			    			newTr.appendChild(newTd1)
+			    			newTr.appendChild(newTd2)
+			    			newTr.appendChild(newTd3)
+
+			    			newTd1.append(text1)
+			    			newTd2.append(text2)
+			    			newTd3.append(text3)
+
+			    		}
+			    	}
+			    }
+			  }
+			});
+ 		</script>
+ 	</body>
+</html>

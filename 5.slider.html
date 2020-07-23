@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html lang="en">
+ 	<head>  
+ 		<meta charset="utf-8"> 
+ 		<title>slider</title> 
+ 		<meta name="description" content="The HTML5 ">  
+ 		<meta name="author" content="">  
+ 
+ 		<link rel="stylesheet" href="styles.css">
+ 		    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap" rel="stylesheet">s
+ 	</head>
+ 	<body>
+ 		<div class="container">  
+	 		<button onclick="prev()" class="nextprev"> Prev </button>
+	           <img id="slider" src="img/1.jpg" width="550px"/> 
+	        <button onclick="next()" class="nextprev"> Next </button>
+		</div>
+ 		<script>
+	 		 const images = [
+			    'img/1.jpg', 
+			    'img/2.jpg', 
+			    'img/3.webp'
+				];
+				let num = 0;
+				setInterval(next,  4000);
+				function next() {
+				    let slider = document.querySelector('#slider');
+				    num++;
+				    if(num >= images.length) {
+				    	
+ 
+				        num = 0;
+				    }
+				    slider.src = images[num];
+				}
+				function prev() {
+				    let slider = document.querySelector('#slider');
+				    num--;
+				    if(num < 0) {
+				        num = images.length-1;
+				    }
+				    slider.src = images[num];
+				}
+ 		</script>
+ 	</body>
+</html>
