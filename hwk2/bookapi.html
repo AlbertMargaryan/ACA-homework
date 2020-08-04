@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html lang="en">
+ 	<head>  
+ 		<meta charset="utf-8"> 
+ 		<title></title> 
+ 		<meta name="description" content="The HTML5 ">  
+ 		<meta name="author" content="">  
+ 
+ 		<link rel="stylesheet" href="">
+ 	</head>
+ 	<body>  
+ 		<style>
+ 			table {
+				 border-collapse: collapse;
+ 			}
+ 			tr {
+				border:1px solid black;
+ 			}
+ 			table tbody tr:nth-child(odd) {
+ 				background: rgba(0,0,0,0.4);
+ 				border:1px solid black;
+ 				color: #fff
+ 			}
+ 			td {
+ 				padding: 10px;
+ 			}
+ 		</style>
+ 		<h2>
+ 			Search book!
+ 		</h2>
+ 		<input type="search">
+ 		<button onclick="getBook(1)">Search!</button>
+ 		<script src="bookapi.js"></script>
+ 		<hr color="#ccc">
+ 			<span onclick="getBook(--page)" style="cursor: pointer;">⮨</span>
+ 		<h3 class="found" style="text-align: center;display: inline-block;">Books Found: </h3>
+ 			<span onclick="getBook(++page)" style="cursor: pointer;">⮫</span>
+ 		<table>
+ 			<thead>
+ 				<tr>
+ 					<th>Title</th>
+ 					<th>Author Name</th>
+ 					<th>First publish year</th>
+ 					<th>Subject (only first 5 items)</th>
+ 				</tr>
+ 			</thead>
+ 			<tbody>
+ 				
+ 			</tbody>
+ 		</table>
+
+ 	</body>
+</html>
